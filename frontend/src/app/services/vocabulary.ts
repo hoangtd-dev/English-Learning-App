@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface VocabularyItem {
   word: string;
@@ -14,7 +15,7 @@ export interface VocabularyItem {
   providedIn: 'root',
 })
 export class Vocabulary {
-  private apiUrl = 'http://localhost:3000/api/vocabulary';
+  private apiUrl = environment.API_URL + '/vocabulary';
 
   constructor(private http: HttpClient) {}
 
