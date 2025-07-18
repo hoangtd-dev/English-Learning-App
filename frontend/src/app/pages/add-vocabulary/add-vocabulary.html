@@ -1,0 +1,106 @@
+<form [formGroup]="vocabForm" (ngSubmit)="onSubmit()" class="vocab-form">
+  <label>
+    Word
+    <input formControlName="word" type="text" placeholder="Enter word" />
+  </label>
+  <div
+    *ngIf="vocabForm.get('word')?.invalid && vocabForm.get('word')?.touched"
+    class="error"
+  >
+    Word is required.
+  </div>
+
+  <label>
+    Example Sentence
+    <input
+      formControlName="exampleSentence"
+      type="text"
+      placeholder="Enter example sentence"
+    />
+  </label>
+  <div
+    *ngIf="
+      vocabForm.get('exampleSentence')?.invalid &&
+      vocabForm.get('exampleSentence')?.touched
+    "
+    class="error"
+  >
+    Example sentence is required.
+  </div>
+
+  <label>
+    Translated Sentence
+    <input
+      formControlName="translatedSentence"
+      type="text"
+      placeholder="Enter translated sentence"
+    />
+  </label>
+  <div
+    *ngIf="
+      vocabForm.get('translatedSentence')?.invalid &&
+      vocabForm.get('translatedSentence')?.touched
+    "
+    class="error"
+  >
+    Translation is required.
+  </div>
+
+  <button type="submit" [disabled]="vocabForm.invalid">Add Vocabulary</button>
+
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</form>
+
+<style>
+  .vocab-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .vocab-form label {
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .vocab-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .vocab-form button {
+    background: #6200ea;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .vocab-form button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  .success {
+    color: #388e3c;
+    font-weight: 500;
+  }
+  .error {
+    color: #d32f2f;
+    font-size: 0.95rem;
+  }
+  @media (max-width: 600px) {
+    .vocab-form {
+      padding: 1rem;
+    }
+  }
+</style>

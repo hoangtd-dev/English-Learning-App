@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <a routerLink="/add" routerLinkActive="active">Add Vocabulary</a>
+  <a routerLink="/revise" routerLinkActive="active">Revise Vocabulary</a>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #6200ea;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .navbar a.active,
+  .navbar a:hover {
+    background: #3700b3;
+  }
+  main {
+    padding: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    main {
+      padding: 0.5rem;
+    }
+  }
+</style>
