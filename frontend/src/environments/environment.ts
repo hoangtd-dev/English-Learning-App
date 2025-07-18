@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  API_URL: 'http://localhost:3000/api',
+  production: true,
+  API_URL: 'https://english-learning-app-pied.vercel.app/api',
 };
