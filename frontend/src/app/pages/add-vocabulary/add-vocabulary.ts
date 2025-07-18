@@ -25,6 +25,7 @@ export class AddVocabulary {
       word: ['', Validators.required],
       exampleSentence: ['', Validators.required],
       translatedSentence: ['', Validators.required],
+      meaning: ['', Validators.required],
     });
   }
 

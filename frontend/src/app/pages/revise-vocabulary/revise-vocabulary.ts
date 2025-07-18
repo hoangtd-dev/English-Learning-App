@@ -1,78 +1,102 @@
 import { Component, signal } from '@angular/core';
 import { Vocabulary, VocabularyItem } from '../../services/vocabulary';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-revise-vocabulary',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './revise-vocabulary.html',
   styleUrl: './revise-vocabulary.css',
 })
 export class ReviseVocabulary {
-  vocabItem: VocabularyItem | null = null;
-  userGuess = '';
-  showHint = false;
-  showFullHint = false;
-  feedback = '';
-  loading = false;
+  vocabItem = signal<VocabularyItem | null>(null);
+  hintStep = signal(0); // 0: no hint, 1: meaning, 2: first char, 3: full word
+  showAnswer = signal(false);
+  loading = signal(false);
+  feedback = signal('');
+  resetting = signal(false);
 
-  constructor(private vocabService: Vocabulary) {
+  answerForm: FormGroup;
+
+  constructor(private vocabService: Vocabulary, private fb: FormBuilder) {
+    this.answerForm = this.fb.group({
+      answer: ['', Validators.required],
+    });
     this.getRandomWord();
   }
 
   getRandomWord() {
-    this.loading = true;
-    this.feedback = '';
-    this.userGuess = '';
-    this.showHint = false;
-    this.showFullHint = false;
+    this.loading.set(true);
+    this.feedback.set('');
+    this.answerForm.reset();
+    this.hintStep.set(0);
+    this.showAnswer.set(false);
     this.vocabService.getRandomVocabulary().subscribe({
       next: (item) => {
-        this.vocabItem = item;
-        this.loading = false;
+        this.vocabItem.set(item);
+        this.loading.set(false);
       },
       error: () => {
-        this.vocabItem = null;
-        this.loading = false;
+        this.vocabItem.set(null);
+        this.loading.set(false);
       },
     });
   }
 
   getMaskedSentence(): string {
-    if (!this.vocabItem) return '';
-    // Replace the word (case-insensitive) with blank
-    const re = new RegExp(this.vocabItem.word, 'gi');
-    return this.vocabItem.exampleSentence.replace(re, '____');
+    const item = this.vocabItem();
+    if (!item) return '';
+    const re = new RegExp(item.word, 'gi');
+    return item.exampleSentence.replace(re, '__________');
   }
 
   toggleHint() {
-    if (!this.showHint) {
-      this.showHint = true;
-    } else if (!this.showFullHint) {
-      this.showFullHint = true;
-    } else {
-      this.showHint = false;
-      this.showFullHint = false;
-    }
+    this.hintStep.set((this.hintStep() + 1) % 4);
   }
 
   getHint(): string {
-    if (!this.vocabItem) return '';
-    if (this.showFullHint) return this.vocabItem.word;
-    if (this.showHint) return this.vocabItem.word[0] + '...';
+    const item = this.vocabItem();
+    if (!item) return '';
+    if (this.hintStep() === 1) return item.meaning;
+    if (this.hintStep() === 2) return item.word[0] + '...';
+    if (this.hintStep() === 3) return item.word;
     return '';
   }
 
   checkAnswer() {
-    if (!this.vocabItem) return;
-    if (
-      this.userGuess.trim().toLowerCase() === this.vocabItem.word.toLowerCase()
-    ) {
-      this.feedback = 'Correct!';
-    } else {
-      this.feedback = `Incorrect. The word was: ${this.vocabItem.word}`;
+    const item = this.vocabItem();
+    if (!item) return;
+    const guess = this.answerForm.value.answer?.trim();
+    if (!guess) {
+      this.feedback.set('Please enter your answer.');
+      this.showAnswer.set(false);
+      return;
     }
+    if (guess.toLowerCase() === item.word.toLowerCase()) {
+      this.feedback.set('Correct!');
+      this.showAnswer.set(true);
+      this.vocabService.markRevised(item.word).subscribe();
+    } else {
+      this.feedback.set('Incorrect');
+    }
+  }
+
+  resetAll() {
+    this.resetting.set(true);
+    this.vocabService.resetVocabulary().subscribe({
+      next: () => {
+        this.resetting.set(false);
+        this.getRandomWord();
+      },
+      error: () => {
+        this.resetting.set(false);
+      },
+    });
   }
 }

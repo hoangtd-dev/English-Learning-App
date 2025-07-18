@@ -6,6 +6,8 @@ export interface VocabularyItem {
   word: string;
   exampleSentence: string;
   translatedSentence: string;
+  meaning: string;
+  isRevised?: boolean;
 }
 
 @Injectable({
@@ -26,6 +28,14 @@ export class Vocabulary {
 
   getRandomVocabulary(): Observable<VocabularyItem> {
     return this.http.get<VocabularyItem>(`${this.apiUrl}/random`);
+  }
+
+  resetVocabulary(): Observable<any> {
+    return this.http.post(this.apiUrl + '/reset', {});
+  }
+
+  markRevised(word: string): Observable<any> {
+    return this.http.patch(this.apiUrl + '/revised', { word });
   }
 }
 

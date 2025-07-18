@@ -1,116 +1,80 @@
-<div
-  class="revise-container"
-  *ngIf="!loading && vocabItem; else loadingOrEmpty"
->
-  <div class="sentence-block">
-    <span>{{ getMaskedSentence() }}</span>
-    <button type="button" (click)="toggleHint()" class="hint-btn">Hint</button>
-    <span class="hint" *ngIf="getHint()">{{ getHint() }}</span>
+@if (vocabItem()) {
+<div class="revise-vocab-card">
+  <div class="revise-vocab-title">Revise Vocabulary</div>
+  <div class="revise-card-inner">
+    <button
+      (click)="resetAll()"
+      [disabled]="resetting()"
+      class="revise-reset-btn"
+    >
+      Reset
+    </button>
+    <div class="revise-prompt">{{ getMaskedSentence() }}?</div>
+    @if (showAnswer()) {
+    <div class="revise-answer-block">
+      <div class="revise-answer-label">CORRECT ANSWER</div>
+      <div class="revise-answer">{{ vocabItem()?.word }}</div>
+    </div>
+    } @if (!showAnswer()) {
+    <form
+      [formGroup]="answerForm"
+      class="revise-input-block"
+      (ngSubmit)="checkAnswer()"
+    >
+      <input
+        formControlName="answer"
+        type="text"
+        placeholder="Type your answer"
+        class="revise-input"
+      />
+      <button type="submit" class="revise-btn">Check</button>
+      @if (feedback()) {
+      <div class="revise-feedback">{{ feedback() }}</div>
+      }
+    </form>
+    } @if (showAnswer()) {
+    <button (click)="getRandomWord()" class="revise-btn next">Next</button>
+    }
+    <button type="button" (click)="toggleHint()" class="revise-hint-btn">
+      Hint
+    </button>
+    <div class="revise-hints">
+      @if (hintStep() >= 1) {
+      <div class="revise-hint">{{ vocabItem()?.meaning }}</div>
+      } @if (vocabItem()?.word) { @if (hintStep() >= 2) {
+      <div class="revise-hint">{{ vocabItem()?.word?.charAt(0) + "..." }}</div>
+      } @if (hintStep() >= 3) {
+      <div class="revise-hint">{{ vocabItem()?.word }}</div>
+      } }
+    </div>
   </div>
-  <div class="translation">{{ vocabItem.translatedSentence }}</div>
-  <input
-    [(ngModel)]="userGuess"
-    type="text"
-    placeholder="Guess the word"
-    class="guess-input"
-  />
-  <button (click)="checkAnswer()" class="check-btn">Check Answer</button>
-  <div
-    class="feedback"
-    [ngClass]="{
-      correct: feedback === 'Correct!',
-      incorrect: feedback.startsWith('Incorrect')
-    }"
-    *ngIf="feedback"
-  >
-    {{ feedback }}
-  </div>
-  <button (click)="getRandomWord()" class="next-btn">Next Word</button>
 </div>
-<ng-template #loadingOrEmpty>
-  <div *ngIf="loading">Loading...</div>
-  <div *ngIf="!loading && !vocabItem">
-    No vocabulary found. Please add some first.
+} @else {
+<div class="revise-vocab-card">
+  <div class="revise-vocab-title">Revise Vocabulary</div>
+  <div class="revise-card-inner">
+    <div class="revise-prompt">No vocabulary found. Please add some first.</div>
   </div>
-</ng-template>
-
+</div>
+}
 <style>
-  .revise-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    background: #fff;
-    padding: 1.5rem;
+  .revise-reset-btn {
+    background: #e0e7ff;
+    color: #7c83f7;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    align-items: stretch;
-  }
-  .sentence-block {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.97rem;
     font-weight: 500;
-  }
-  .hint-btn {
-    background: #03dac6;
-    color: #222;
-    border: none;
-    border-radius: 4px;
-    padding: 0.3rem 0.7rem;
-    font-size: 1rem;
     cursor: pointer;
-    margin-left: 0.5rem;
-  }
-  .hint {
-    color: #6200ea;
-    font-weight: 600;
-    margin-left: 0.5rem;
-  }
-  .translation {
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .guess-input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  .check-btn,
-  .next-btn {
-    background: #6200ea;
-    color: #fff;
-    border: none;
-    padding: 0.7rem;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+    margin-left: auto;
+    display: block;
     transition: background 0.2s;
   }
-  .next-btn {
-    background: #3700b3;
-  }
-  .feedback {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-  }
-  .feedback.correct {
-    color: #388e3c;
-  }
-  .feedback.incorrect {
-    color: #d32f2f;
-  }
-  @media (max-width: 600px) {
-    .revise-container {
-      padding: 1rem;
-    }
-    .sentence-block {
-      font-size: 1rem;
-    }
+  .revise-reset-btn:disabled {
+    background: #f7f8fa;
+    color: #b0b0c3;
+    cursor: not-allowed;
   }
 </style>

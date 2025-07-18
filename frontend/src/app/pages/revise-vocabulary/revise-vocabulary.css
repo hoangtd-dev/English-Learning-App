@@ -1,3 +1,150 @@
 .revise-container {
   margin-top: 2rem;
 }
+.revise-vocab-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(80, 100, 200, 0.08);
+  max-width: 350px;
+  margin: 2.5rem auto 0 auto;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.revise-vocab-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4b4b7e;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.revise-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.revise-question {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4b4b7e;
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+.revise-prompt {
+  font-size: 1rem;
+  color: #7c83f7;
+  background: #e0e7ff;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+.revise-input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: stretch;
+}
+.revise-input {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e0e7ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f7f8fa;
+  transition: border 0.2s;
+  outline: none;
+}
+.revise-input:focus {
+  border: 1.5px solid #7c83f7;
+  background: #fff;
+}
+.revise-btn {
+  background: linear-gradient(90deg, #7c83f7, #4b4b7e);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  box-shadow: 0 2px 8px rgba(80, 100, 200, 0.08);
+  transition: background 0.2s;
+}
+.revise-btn.next {
+  margin-top: 1rem;
+}
+.revise-btn:disabled {
+  background: #e0e7ff;
+  color: #b0b0c3;
+  cursor: not-allowed;
+}
+.revise-hint-btn {
+  background: #e0e7ff;
+  color: #7c83f7;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+.revise-hint {
+  color: #7c83f7;
+  font-weight: 600;
+  margin-left: 0.4rem;
+  font-size: 0.97rem;
+  text-align: center;
+}
+.revise-feedback {
+  color: #d32f2f;
+  font-size: 0.97rem;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+.revise-answer-block {
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 1rem 1rem 0.7rem 1rem;
+  text-align: center;
+}
+.revise-answer-label {
+  color: #7c83f7;
+  font-size: 0.93rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.revise-answer {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4b4b7e;
+  margin-bottom: 0.5rem;
+}
+
+.revise-hints {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.revise-hint {
+  color: #7c83f7;
+  font-weight: 600;
+  font-size: 0.97rem;
+  background: none;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .revise-vocab-card {
+    padding: 1.5rem;
+    max-width: 98vw;
+  }
+}

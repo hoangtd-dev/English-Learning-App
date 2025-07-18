@@ -1,12 +1,394 @@
 [
   {
-    "word": "test",
-    "exampleSentence": "test",
-    "translatedSentence": "test"
+    "word": "Phenomenon",
+    "meaning": "hiện tượng",
+    "exampleSentence": "The Northern Lights are a natural phenomenon.",
+    "translatedSentence": "Cực quang là một hiện tượng tự nhiên.",
+    "isRevised": false
   },
   {
-    "word": "teacher",
-    "exampleSentence": "the ... is very hansome",
-    "translatedSentence": "Giáo viên rất đẹp trai"
+    "word": "Phenomena",
+    "meaning": "số nhiều của hiện tượng",
+    "exampleSentence": "These phenomena are hard to explain.",
+    "translatedSentence": "Những hiện tượng này khó giải thích.",
+    "isRevised": false
+  },
+  {
+    "word": "equations",
+    "meaning": "phương trình",
+    "exampleSentence": "The scientist solved complex equations.",
+    "translatedSentence": "Nhà khoa học giải những phương trình phức tạp.",
+    "isRevised": false
+  },
+  {
+    "word": "reasonably",
+    "meaning": "một cách hợp lý",
+    "exampleSentence": "He argued his case reasonably.",
+    "translatedSentence": "Anh ấy tranh luận một cách hợp lý.",
+    "isRevised": false
+  },
+  {
+    "word": "coincidence",
+    "meaning": "sự trùng hợp ngẫu nhiên",
+    "exampleSentence": "Meeting you here is just a coincidence.",
+    "translatedSentence": "Gặp bạn ở đây chỉ là sự trùng hợp ngẫu nhiên.",
+    "isRevised": false
+  },
+  {
+    "word": "Justice",
+    "meaning": "công lý",
+    "exampleSentence": "The court will deliver justice.",
+    "translatedSentence": "Tòa án sẽ thực thi công lý.",
+    "isRevised": false
+  },
+  {
+    "word": "Postgraduate",
+    "meaning": "sau đại học",
+    "exampleSentence": "She's doing postgraduate studies.",
+    "translatedSentence": "Cô ấy đang học sau đại học.",
+    "isRevised": false
+  },
+  {
+    "word": "toughest",
+    "meaning": "khó nhất",
+    "exampleSentence": "This was the toughest exam I've ever taken.",
+    "translatedSentence": "Đây là bài thi khó nhất tôi từng làm.",
+    "isRevised": false
+  },
+  {
+    "word": "extent",
+    "meaning": "phạm vi, vĩ mô",
+    "exampleSentence": "We don't know the full extent of the damage.",
+    "translatedSentence": "Chúng ta không biết toàn bộ phạm vi thiệt hại.",
+    "isRevised": false
+  },
+  {
+    "word": "incentive",
+    "meaning": "tiền hoa hồng, sự khích lệ",
+    "exampleSentence": "The company offers financial incentives.",
+    "translatedSentence": "Công ty đưa ra các khích lệ tài chính.",
+    "isRevised": false
+  },
+  {
+    "word": "desirable",
+    "meaning": "khát khao",
+    "exampleSentence": "Peace is desirable for everyone.",
+    "translatedSentence": "Hòa bình là điều mọi người khát khao.",
+    "isRevised": false
+  },
+  {
+    "word": "transition",
+    "meaning": "sự chuyển tiếp",
+    "exampleSentence": "The country is in transition to democracy.",
+    "translatedSentence": "Đất nước đang chuyển tiếp sang dân chủ.",
+    "isRevised": false
+  },
+  {
+    "word": "bargains",
+    "meaning": "sự mặc cả",
+    "exampleSentence": "She loves finding good bargains.",
+    "translatedSentence": "Cô ấy thích tìm những món hời.",
+    "isRevised": false
+  },
+  {
+    "word": "plunge",
+    "meaning": "sự tăng vọt",
+    "exampleSentence": "The temperature took a plunge overnight.",
+    "translatedSentence": "Nhiệt độ tăng vọt qua đêm.",
+    "isRevised": false
+  },
+  {
+    "word": "Unless",
+    "meaning": "trừ khi",
+    "exampleSentence": "I won't go unless you come with me.",
+    "translatedSentence": "Tôi sẽ không đi trừ khi bạn đi cùng.",
+    "isRevised": false
+  },
+  {
+    "word": "fragile",
+    "meaning": "mong manh, dễ vỡ",
+    "exampleSentence": "Handle with care - it's fragile.",
+    "translatedSentence": "Cẩn thận - nó dễ vỡ.",
+    "isRevised": false
+  },
+  {
+    "word": "steadfast",
+    "meaning": "vững vàng",
+    "exampleSentence": "He remained steadfast in his beliefs.",
+    "translatedSentence": "Anh ấy vững vàng trong niềm tin của mình.",
+    "isRevised": false
+  },
+  {
+    "word": "enduring",
+    "meaning": "đáng phải chịu",
+    "exampleSentence": "The pain was endurable.",
+    "translatedSentence": "Cơn đau còn chịu được.",
+    "isRevised": false
+  },
+  {
+    "word": "caught off guard",
+    "meaning": "trong trạng thái không đề phòng",
+    "exampleSentence": "The question caught him off guard.",
+    "translatedSentence": "Câu hỏi khiến anh ấy không kịp đề phòng.",
+    "isRevised": false
+  },
+  {
+    "word": "Orbit",
+    "meaning": "quay theo quỹ đạo",
+    "exampleSentence": "The satellite orbits Earth.",
+    "translatedSentence": "Vệ tinh quay quanh Trái đất.",
+    "isRevised": false
+  },
+  {
+    "word": "flourish",
+    "meaning": "sự thịnh vượng",
+    "exampleSentence": "Arts flourished during the Renaissance.",
+    "translatedSentence": "Nghệ thuật thịnh vượng thời Phục hưng.",
+    "isRevised": false
+  },
+  {
+    "word": "evolve",
+    "meaning": "tiến hóa, phát triển",
+    "exampleSentence": "Species evolve over time.",
+    "translatedSentence": "Các loài tiến hóa theo thời gian.",
+    "isRevised": false
+  },
+  {
+    "word": "followed a path",
+    "meaning": "đi theo một mối nào đó",
+    "exampleSentence": "He followed a path to success.",
+    "translatedSentence": "Anh ấy đi theo con đường thành công.",
+    "isRevised": false
+  },
+  {
+    "word": "Invader",
+    "meaning": "kẻ xâm lược",
+    "exampleSentence": "The invaders were defeated.",
+    "translatedSentence": "Những kẻ xâm lược bị đánh bại.",
+    "isRevised": false
+  },
+  {
+    "word": "tumour",
+    "meaning": "khối u",
+    "exampleSentence": "The doctor found a benign tumour.",
+    "translatedSentence": "Bác sĩ phát hiện khối u lành tính.",
+    "isRevised": false
+  },
+  {
+    "word": "bacteria",
+    "meaning": "vi khuẩn",
+    "exampleSentence": "Wash your hands to kill bacteria.",
+    "translatedSentence": "Rửa tay để diệt vi khuẩn.",
+    "isRevised": false
+  },
+  {
+    "word": "impose",
+    "meaning": "áp đặt lên",
+    "exampleSentence": "The government imposed new taxes.",
+    "translatedSentence": "Chính phủ áp đặt thuế mới.",
+    "isRevised": false
+  },
+  {
+    "word": "burden",
+    "meaning": "gánh nặng",
+    "exampleSentence": "The debt is a heavy burden.",
+    "translatedSentence": "Món nợ là gánh nặng.",
+    "isRevised": false
+  },
+  {
+    "word": "BUSHES",
+    "meaning": "bụi cây",
+    "exampleSentence": "The rabbit hid in the bushes.",
+    "translatedSentence": "Con thỏ trốn trong bụi cây.",
+    "isRevised": false
+  },
+  {
+    "word": "insist",
+    "meaning": "khăng khăng, nằng nặc",
+    "exampleSentence": "He insists on coming with us.",
+    "translatedSentence": "Anh ấy nằng nặc đòi đi cùng.",
+    "isRevised": false
+  },
+  {
+    "word": "shave(v)",
+    "meaning": "cạo",
+    "exampleSentence": "He shaves every morning.",
+    "translatedSentence": "Anh ấy cạo râu mỗi sáng.",
+    "isRevised": false
+  },
+  {
+    "word": "soldier",
+    "meaning": "người lính",
+    "exampleSentence": "The soldier fought bravely.",
+    "translatedSentence": "Người lính chiến đấu dũng cảm.",
+    "isRevised": false
+  },
+  {
+    "word": "coverage",
+    "meaning": "xử lý cái gì đó",
+    "exampleSentence": "The media gave full coverage to the event.",
+    "translatedSentence": "Truyền thông xử lý đầy đủ sự kiện.",
+    "isRevised": false
+  },
+  {
+    "word": "forefront",
+    "meaning": "tiền tuyến",
+    "exampleSentence": "She's at the forefront of research.",
+    "translatedSentence": "Cô ấy ở tiền tuyến nghiên cứu.",
+    "isRevised": false
+  },
+  {
+    "word": "emerge",
+    "meaning": "trồi lên, xuất hiện",
+    "exampleSentence": "New evidence emerged.",
+    "translatedSentence": "Bằng chứng mới xuất hiện.",
+    "isRevised": false
+  },
+  {
+    "word": "discipline",
+    "meaning": "ngành học",
+    "exampleSentence": "Physics is a scientific discipline.",
+    "translatedSentence": "Vật lý là một ngành khoa học.",
+    "isRevised": false
+  },
+  {
+    "word": "academic discipline",
+    "meaning": "môn học học thuật",
+    "exampleSentence": "Sociology is an academic discipline.",
+    "translatedSentence": "Xã hội học là môn học thuật.",
+    "isRevised": false
+  },
+  {
+    "word": "literature",
+    "meaning": "giá trị văn chương",
+    "exampleSentence": "She studies English literature.",
+    "translatedSentence": "Cô ấy nghiên cứu văn chương Anh.",
+    "isRevised": false
+  },
+  {
+    "word": "infancy",
+    "meaning": "thời kỳ đầu",
+    "exampleSentence": "The technology is still in its infancy.",
+    "translatedSentence": "Công nghệ còn ở thời kỳ đầu.",
+    "isRevised": false
+  },
+  {
+    "word": "dubious",
+    "meaning": "mơ hồ",
+    "exampleSentence": "His alibi seems dubious.",
+    "translatedSentence": "Chứng cớ ngoại phạm có vẻ mơ hồ.",
+    "isRevised": false
+  },
+  {
+    "word": "a body of",
+    "meaning": "một dạng nào đó",
+    "exampleSentence": "There's a body of evidence supporting this.",
+    "translatedSentence": "Có một dạng bằng chứng ủng hộ điều này.",
+    "isRevised": false
+  },
+  {
+    "word": "occasionally",
+    "meaning": "thỉnh thoảng",
+    "exampleSentence": "We meet occasionally for coffee.",
+    "translatedSentence": "Chúng tôi thỉnh thoảng gặp uống cà phê.",
+    "isRevised": false
+  },
+  {
+    "word": "justify",
+    "meaning": "biện minh",
+    "exampleSentence": "Can you justify your actions?",
+    "translatedSentence": "Bạn có thể biện minh cho hành động của mình?",
+    "isRevised": false
+  },
+  {
+    "word": "rationalising",
+    "meaning": "lý trí hóa",
+    "exampleSentence": "He's rationalising his decision.",
+    "translatedSentence": "Anh ấy đang lý trí hóa quyết định của mình.",
+    "isRevised": false
+  },
+  {
+    "word": "build a theory",
+    "meaning": "xây dựng một mô hình lý thuyết",
+    "exampleSentence": "Scientists build theories based on evidence.",
+    "translatedSentence": "Nhà khoa học xây dựng lý thuyết dựa trên bằng chứng.",
+    "isRevised": false
+  },
+  {
+    "word": "accumulated",
+    "meaning": "tích lũy",
+    "exampleSentence": "She accumulated vast knowledge.",
+    "translatedSentence": "Cô ấy tích lũy kiến thức rộng.",
+    "isRevised": false
+  },
+  {
+    "word": "school of thought",
+    "meaning": "nhóm ý tưởng",
+    "exampleSentence": "There are different schools of thought on this.",
+    "translatedSentence": "Có nhiều nhóm ý tưởng khác nhau về việc này.",
+    "isRevised": false
+  },
+  {
+    "word": "undertake",
+    "meaning": "thực hiện, đảm đương gánh vác",
+    "exampleSentence": "The company will undertake the project.",
+    "translatedSentence": "Công ty sẽ đảm đương dự án.",
+    "isRevised": false
+  },
+  {
+    "word": "outsource",
+    "meaning": "thuê ngoài",
+    "exampleSentence": "We outsource our IT services.",
+    "translatedSentence": "Chúng tôi thuê ngoài dịch vụ IT.",
+    "isRevised": false
+  },
+  {
+    "word": "ubiquity",
+    "meaning": "sự có mặt ở khắp mọi nơi",
+    "exampleSentence": "Smartphones have achieved ubiquity.",
+    "translatedSentence": "Điện thoại thông minh có mặt khắp nơi.",
+    "isRevised": false
+  },
+  {
+    "word": "obsession",
+    "meaning": "ám ảnh",
+    "exampleSentence": "He has an obsession with cleanliness.",
+    "translatedSentence": "Anh ấy ám ảnh về sự sạch sẽ.",
+    "isRevised": false
+  },
+  {
+    "word": "consciousness",
+    "meaning": "ý thức",
+    "exampleSentence": "The patient lost consciousness.",
+    "translatedSentence": "Bệnh nhân mất ý thức.",
+    "isRevised": false
+  },
+  {
+    "word": "manifestos",
+    "meaning": "tuyên ngôn",
+    "exampleSentence": "The party published its manifestos.",
+    "translatedSentence": "Đảng công bố tuyên ngôn.",
+    "isRevised": false
+  },
+  {
+    "word": "discharge",
+    "meaning": "thải ra, cho xuất viện",
+    "exampleSentence": "The factory discharges waste into the river.",
+    "translatedSentence": "Nhà máy thải chất thải ra sông.",
+    "isRevised": false
+  },
+  {
+    "word": "intention",
+    "meaning": "ý định, dự định",
+    "exampleSentence": "My intention is to help.",
+    "translatedSentence": "Ý định của tôi là giúp đỡ.",
+    "isRevised": false
+  },
+  {
+    "word": "dictatorship",
+    "meaning": "chế độ độc tài",
+    "exampleSentence": "The country suffered under dictatorship.",
+    "translatedSentence": "Đất nước chịu đựng chế độ độc tài.",
+    "isRevised": false
   }
 ]

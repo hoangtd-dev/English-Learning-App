@@ -1,46 +1,80 @@
-<nav class="navbar">
-  <a routerLink="/add" routerLinkActive="active">Add Vocabulary</a>
-  <a routerLink="/revise" routerLinkActive="active">Revise Vocabulary</a>
-</nav>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<div class="app-container">
+  <div class="app-header-bar">
+    <button class="app-dots" (click)="toggleMenu()">&#8942;</button>
+    <div class="app-menu" *ngIf="menuOpen">
+      <a (click)="navigateTo('revise')">Revise Vocabulary</a>
+      <a (click)="navigateTo('add')">Add Vocabulary</a>
+    </div>
+  </div>
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
 
 <style>
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #6200ea;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  :host {
+    display: block;
+    min-height: 100vh;
+    background: #f6fbff;
   }
-  .navbar a {
-    color: #fff;
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .app-header-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    background: #f6fbff;
+    position: relative;
+    flex-shrink: 0;
+    border-bottom: 1px solid #e3f2fd;
+  }
+  .app-dots {
+    font-size: 1.7rem;
+    color: #7c83f7;
+    cursor: pointer;
+    user-select: none;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 0.5rem;
+  }
+  .app-menu {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    min-width: 160px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-menu a {
+    padding: 0.8rem 1.2rem;
+    color: #7c83f7;
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e3f2fd;
     transition: background 0.2s;
   }
-  .navbar a.active,
-  .navbar a:hover {
-    background: #3700b3;
+  .app-menu a:last-child {
+    border-bottom: none;
   }
-  main {
-    padding: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
+  .app-menu a:hover {
+    background: #e3f2fd;
   }
-  @media (max-width: 600px) {
-    .navbar {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    main {
-      padding: 0.5rem;
-    }
+  .app-main {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 0.5rem;
   }
 </style>
