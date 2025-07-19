@@ -2,6 +2,11 @@
 <div class="revise-vocab-card">
   <div class="revise-vocab-title">Revise Vocabulary</div>
   <div class="revise-card-inner">
+    <div class="revise-progress">
+      <span class="revise-progress-text"
+        >{{ revisedCount() }}/{{ totalCount() }}</span
+      >
+    </div>
     <button
       (click)="resetAll()"
       [disabled]="resetting()"
@@ -14,6 +19,12 @@
     <div class="revise-answer-block">
       <div class="revise-answer-label">CORRECT ANSWER</div>
       <div class="revise-answer">{{ vocabItem()?.word }}</div>
+    </div>
+    <div class="revise-translation-block">
+      <div class="revise-translation-label">TRANSLATION</div>
+      <div class="revise-translation">
+        {{ vocabItem()?.translatedSentence }}
+      </div>
     </div>
     } @if (!showAnswer()) {
     <form
@@ -76,5 +87,39 @@
     background: #f7f8fa;
     color: #b0b0c3;
     cursor: not-allowed;
+  }
+  .revise-progress {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .revise-progress-text {
+    background: #f0f9ff;
+    color: #0369a1;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .revise-translation-block {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .revise-translation-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+  .revise-translation {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.5;
   }
 </style>

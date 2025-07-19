@@ -21,6 +21,8 @@ export class ReviseVocabulary {
   loading = signal(false);
   feedback = signal('');
   resetting = signal(false);
+  totalCount = signal(0);
+  revisedCount = signal(0);
 
   answerForm: FormGroup;
 
@@ -28,10 +30,34 @@ export class ReviseVocabulary {
     this.answerForm = this.fb.group({
       answer: ['', Validators.required],
     });
+    this.loadCounts();
     this.getRandomWord();
   }
 
+  loadCounts() {
+    this.vocabService.getAllVocabulary().subscribe({
+      next: (items) => {
+        this.totalCount.set(items.length);
+        this.revisedCount.set(items.filter((item) => item.isRevised).length);
+      },
+      error: () => {
+        this.totalCount.set(0);
+        this.revisedCount.set(0);
+      },
+    });
+  }
+
   getRandomWord() {
+    // Mark current word as revised before getting next word
+    const currentItem = this.vocabItem();
+    if (currentItem && this.showAnswer()) {
+      this.vocabService.markRevised(currentItem.word).subscribe({
+        next: () => {
+          this.loadCounts(); // Update counts after marking as revised
+        },
+      });
+    }
+
     this.loading.set(true);
     this.feedback.set('');
     this.answerForm.reset();
@@ -81,7 +107,7 @@ export class ReviseVocabulary {
     if (guess.toLowerCase() === item.word.toLowerCase()) {
       this.feedback.set('Correct!');
       this.showAnswer.set(true);
-      this.vocabService.markRevised(item.word).subscribe();
+      // Don't mark as revised here - will be done when clicking Next
     } else {
       this.feedback.set('Incorrect');
     }
@@ -92,6 +118,7 @@ export class ReviseVocabulary {
     this.vocabService.resetVocabulary().subscribe({
       next: () => {
         this.resetting.set(false);
+        this.loadCounts(); // Update counts after reset
         this.getRandomWord();
       },
       error: () => {
