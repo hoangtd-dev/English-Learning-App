@@ -14,7 +14,7 @@
     "isRevised": false
   },
   {
-    "word": "equations",
+    "word": "equation",
     "meaning": "phương trình",
     "exampleSentence": "The scientist solved complex equations.",
     "translatedSentence": "Nhà khoa học giải những phương trình phức tạp.",
@@ -84,7 +84,7 @@
     "isRevised": false
   },
   {
-    "word": "bargains",
+    "word": "bargain",
     "meaning": "sự mặc cả",
     "exampleSentence": "She loves finding good bargains.",
     "translatedSentence": "Cô ấy thích tìm những món hời.",
@@ -119,10 +119,10 @@
     "isRevised": false
   },
   {
-    "word": "enduring",
+    "word": "endurable",
     "meaning": "đáng phải chịu",
-    "exampleSentence": "The pain was endurable.",
-    "translatedSentence": "Cơn đau còn chịu được.",
+    "exampleSentence": "The pain was unpleasant but endurable.",
+    "translatedSentence": "Cơn đau không hay nhưng vẫn chịu được.",
     "isRevised": false
   },
   {
@@ -196,7 +196,7 @@
     "isRevised": false
   },
   {
-    "word": "BUSHES",
+    "word": "bushes",
     "meaning": "bụi cây",
     "exampleSentence": "The rabbit hid in the bushes.",
     "translatedSentence": "Con thỏ trốn trong bụi cây.",
