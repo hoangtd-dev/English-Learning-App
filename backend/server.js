@@ -14,16 +14,25 @@ app.use(bodyParser.json());
 
 // Helper to read vocabulary from file
 function readVocabulary() {
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, "[]", "utf8");
+  try {
+    if (!fs.existsSync(DATA_FILE)) {
+      fs.writeFileSync(DATA_FILE, "[]", "utf8");
+    }
+    const data = fs.readFileSync(DATA_FILE, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("Error reading vocabulary file:", error);
+    return [];
   }
-  const data = fs.readFileSync(DATA_FILE, "utf8");
-  return JSON.parse(data);
 }
 
 // Helper to write vocabulary to file
 function writeVocabulary(vocabList) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(vocabList, null, 2), "utf8");
+  try {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(vocabList, null, 2), "utf8");
+  } catch (error) {
+    console.error("Error writing vocabulary file:", error);
+  }
 }
 
 // Add 'meaning' to the POST endpoint
