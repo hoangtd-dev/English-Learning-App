@@ -35,7 +35,7 @@
     "isRevised": false
   },
   {
-    "word": "Justice",
+    "word": "justice",
     "meaning": "công lý",
     "exampleSentence": "The court will deliver justice.",
     "translatedSentence": "Tòa án sẽ thực thi công lý.",
@@ -49,8 +49,8 @@
     "isRevised": false
   },
   {
-    "word": "toughest",
-    "meaning": "khó nhất",
+    "word": "tough",
+    "meaning": "khó",
     "exampleSentence": "This was the toughest exam I've ever taken.",
     "translatedSentence": "Đây là bài thi khó nhất tôi từng làm.",
     "isRevised": false
@@ -364,7 +364,7 @@
     "isRevised": false
   },
   {
-    "word": "manifestos",
+    "word": "manifesto",
     "meaning": "tuyên ngôn",
     "exampleSentence": "The party published its manifestos.",
     "translatedSentence": "Đảng công bố tuyên ngôn.",
