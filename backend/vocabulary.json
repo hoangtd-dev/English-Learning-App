@@ -1,13 +1,13 @@
 [
   {
-    "word": "Phenomenon",
+    "word": "phenomenon",
     "meaning": "hiện tượng",
     "exampleSentence": "The Northern Lights are a natural phenomenon.",
     "translatedSentence": "Cực quang là một hiện tượng tự nhiên.",
     "isRevised": false
   },
   {
-    "word": "Phenomena",
+    "word": "phenomena",
     "meaning": "số nhiều của hiện tượng",
     "exampleSentence": "These phenomena are hard to explain.",
     "translatedSentence": "Những hiện tượng này khó giải thích.",
@@ -42,7 +42,7 @@
     "isRevised": false
   },
   {
-    "word": "Postgraduate",
+    "word": "postgraduate",
     "meaning": "sau đại học",
     "exampleSentence": "She's doing postgraduate studies.",
     "translatedSentence": "Cô ấy đang học sau đại học.",
@@ -133,7 +133,7 @@
     "isRevised": false
   },
   {
-    "word": "Orbit",
+    "word": "orbit",
     "meaning": "quay theo quỹ đạo",
     "exampleSentence": "The satellite orbits Earth.",
     "translatedSentence": "Vệ tinh quay quanh Trái đất.",
@@ -161,7 +161,7 @@
     "isRevised": false
   },
   {
-    "word": "Invader",
+    "word": "invader",
     "meaning": "kẻ xâm lược",
     "exampleSentence": "The invaders were defeated.",
     "translatedSentence": "Những kẻ xâm lược bị đánh bại.",
@@ -210,7 +210,7 @@
     "isRevised": false
   },
   {
-    "word": "shave(v)",
+    "word": "shave",
     "meaning": "cạo",
     "exampleSentence": "He shaves every morning.",
     "translatedSentence": "Anh ấy cạo râu mỗi sáng.",
