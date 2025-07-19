@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
+const { log } = require("console");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -86,12 +87,19 @@ app.patch("/api/vocabulary/revised", (req, res) => {
   const vocabList = readVocabulary();
   let updated = false;
   for (const item of vocabList) {
-    if (item.word === word) {
+    if (item.word.toLowerCase() === word.toLowerCase()) {
       item.isRevised = true;
       updated = true;
     }
   }
+
+  console.log("updated", updated);
+
   if (updated) {
+    console.log(
+      "Word marked as revised.",
+      vocabList.filter((item) => item.isRevised)
+    );
     writeVocabulary(vocabList);
     res.json({ message: "Word marked as revised." });
   } else {
