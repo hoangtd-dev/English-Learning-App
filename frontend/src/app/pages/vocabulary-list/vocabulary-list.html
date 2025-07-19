@@ -1,0 +1,31 @@
+<div class="vocab-list-card">
+  <div class="vocab-list-title">Vocabulary List</div>
+  <div class="vocab-list-content">
+    @if (loading()) {
+    <div class="vocab-list-loading">Loading vocabularies...</div>
+    } @else if (vocabularies().length === 0) {
+    <div class="vocab-list-empty">
+      No vocabularies found. Please add some first.
+    </div>
+    } @else {
+    <div class="vocab-table-container">
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th class="vocab-table-header">Word</th>
+            <th class="vocab-table-header">Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (vocab of vocabularies(); track vocab.word) {
+          <tr class="vocab-table-row">
+            <td class="vocab-table-cell word-cell">{{ vocab.word }}</td>
+            <td class="vocab-table-cell meaning-cell">{{ vocab.meaning }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    }
+  </div>
+</div>

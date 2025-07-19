@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: 'https://english-learning-app-pied.vercel.app/api',
+  API_URL: 'https://english-learning-app-9vu0.onrender.com/api',
 };

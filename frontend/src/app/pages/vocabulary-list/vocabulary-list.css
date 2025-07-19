@@ -1,0 +1,105 @@
+.vocab-list-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vocab-list-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.vocab-list-content {
+  min-height: 200px;
+}
+
+.vocab-list-loading,
+.vocab-list-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+.vocab-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.vocab-table-header {
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.vocab-table-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.vocab-table-row:hover {
+  background-color: #f9fafb;
+}
+
+.vocab-table-row:last-child {
+  border-bottom: none;
+}
+
+.vocab-table-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #1f2937;
+  vertical-align: top;
+}
+
+.word-cell {
+  font-weight: 600;
+  color: #1f2937;
+  width: 40%;
+}
+
+.meaning-cell {
+  color: #4b5563;
+  width: 60%;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .vocab-list-card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .vocab-table-header,
+  .vocab-table-cell {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .vocab-list-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}

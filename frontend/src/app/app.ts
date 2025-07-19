@@ -19,12 +19,14 @@ export class App {
     this.menuOpen = !this.menuOpen;
   }
 
-  navigateTo(page: 'revise' | 'add') {
+  navigateTo(page: 'revise' | 'add' | 'list') {
     this.menuOpen = false;
     if (page === 'revise') {
       this.router.navigate(['/revise']);
-    } else {
+    } else if (page === 'add') {
       this.router.navigate(['/add']);
+    } else if (page === 'list') {
+      this.router.navigate(['/list']);
     }
   }
 }
