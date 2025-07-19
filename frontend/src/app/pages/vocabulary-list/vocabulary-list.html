@@ -19,7 +19,18 @@
         <tbody>
           @for (vocab of vocabularies(); track vocab.word) {
           <tr class="vocab-table-row">
-            <td class="vocab-table-cell word-cell">{{ vocab.word }}</td>
+            <td class="vocab-table-cell word-cell">
+              <a
+                href="https://www.oxfordlearnersdictionaries.com/definition/english/{{
+                  vocab.word.toLowerCase()
+                }}?q={{ vocab.word.toLowerCase() }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="word-link"
+              >
+                {{ vocab.word }}
+              </a>
+            </td>
             <td class="vocab-table-cell meaning-cell">{{ vocab.meaning }}</td>
           </tr>
           }

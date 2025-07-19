@@ -80,6 +80,25 @@
   width: 40%;
 }
 
+.word-link {
+  color: #2563eb;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.word-link:hover {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+  text-decoration: none;
+}
+
+.word-link:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .meaning-cell {
   color: #4b5563;
   width: 60%;
